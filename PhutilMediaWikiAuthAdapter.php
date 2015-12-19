@@ -79,7 +79,7 @@ final class PhutilMediaWikiAuthAdapter
   protected function getRequestTokenURI() {
     $callback = $this->getCallbackURI();
     return $this->getWikiPageURI('Special:OAuth/initiate',
-                  array('oauth_callback' => $callback));
+                  array('oauth_callback' => rawurlencode($callback)));
   }
 
   protected function getAuthorizeTokenURI() {
